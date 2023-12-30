@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <arpa/inet.h>
+int test(); 
 
 int main() {
     int client_socket;
@@ -17,7 +18,7 @@ int main() {
     }
 
     // Initialize server address structure
-    server_addr.sin_family = AF_INET;
+    server_addr.sin_family = AF_INET; 
     server_addr.sin_port = htons(5555);
     server_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
 
@@ -34,7 +35,7 @@ int main() {
     }
 
     printf("Message sent to server: %s\n", message);
-
+    test();
     // Close the socket
     close(client_socket);
 
